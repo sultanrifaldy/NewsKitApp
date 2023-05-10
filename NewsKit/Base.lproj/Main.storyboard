@@ -79,16 +79,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="news_cell" id="7r9-8V-Tuw">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7r9-8V-Tuw" id="Vsd-5M-cUP">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="top_news_list_cell" rowHeight="306" id="N4U-HW-eko" customClass="TopNewsListViewCell" customModule="NewsKit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="93.666667938232422" width="393" height="306"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="306"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N4U-HW-eko" id="HFE-dR-2na">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="306"/>
@@ -168,6 +160,9 @@
                                                     <rect key="frame" x="20" y="265" width="353" height="41"/>
                                                     <color key="pageIndicatorTintColor" systemColor="secondaryLabelColor"/>
                                                     <color key="currentPageIndicatorTintColor" name="AccentColor"/>
+                                                    <connections>
+                                                        <action selector="pageControlValueChanged:" destination="N4U-HW-eko" eventType="valueChanged" id="OnT-yr-43l"/>
+                                                    </connections>
                                                 </pageControl>
                                             </subviews>
                                             <constraints>
@@ -204,7 +199,9 @@
                             <constraint firstItem="G8H-va-oVP" firstAttribute="leading" secondItem="j3P-G7-0sa" secondAttribute="leading" id="iRt-AJ-gi3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="yH2-ab-q90"/>
+                    <navigationItem key="navigationItem" title="Home" id="yH2-ab-q90">
+                        <barButtonItem key="rightBarButtonItem" image="gear" catalog="system" style="plain" id="Bfs-hG-nfO"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="G8H-va-oVP" id="16e-Nm-hrY"/>
                     </connections>
@@ -271,6 +268,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="128" height="122"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="newspaper.fill" catalog="system" width="128" height="112"/>
         <namedColor name="AccentColor">

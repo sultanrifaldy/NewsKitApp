@@ -38,7 +38,7 @@ class CoreDataStorage {
         let articlesData: ArticlesData
 
         let fetchRequest = ArticlesData.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "author = \(articles.author)")
+        fetchRequest.predicate = NSPredicate(format: "url == %@", articles.url)
         if let data = try? context.fetch(fetchRequest).first {
             articlesData = data
         } else {
@@ -68,25 +68,23 @@ class CoreDataStorage {
         return newsList
     }
 
-    func deleteReadingList(articles: Articles) {
+    func deleteReadingList(url: String)  {
 
         let fetchRequest = ArticlesData.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "author = \(articles.author)")
+        fetchRequest.predicate = NSPredicate(format: "url == %@", url)
         if let data = try? context.fetch(fetchRequest).first {
             context.delete(data)
+            
+            NotificationCenter.default.post(name: .deleteReadingList, object: nil)
 
             try? context.save()
         }
     }
     
-    func isAddedToReadingList(articles: Articles) -> Bool {
+    func isAddedToReadingList(url: String) -> Bool {
         let fetchRequest = ArticlesData.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "author = \(articles.author)")
-        if (try? context.fetch(fetchRequest).first) != nil {
-            return true
-        } else {
-            return false
-        }
+        fetchRequest.predicate = NSPredicate(format: "url == %@", url)
+        return (try? context.fetch(fetchRequest).first) != nil 
         
     }
 

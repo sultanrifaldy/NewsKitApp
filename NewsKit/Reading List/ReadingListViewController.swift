@@ -76,7 +76,7 @@ extension ReadingListViewController: UITableViewDelegate{
             let news = self.readingList.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             
-//            CoreDataStorage.shared.deleteReadingList(articles: news.author)
+            CoreDataStorage.shared.deleteReadingList(url: news.url)
             
             completion(true)
         }
@@ -85,7 +85,6 @@ extension ReadingListViewController: UITableViewDelegate{
             deleteActions.image = UIImage(systemName: "trash")
         }
         
-        deleteActions.backgroundColor = .red
         
         
         return UISwipeActionsConfiguration(actions: [deleteActions])

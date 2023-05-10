@@ -33,13 +33,13 @@ class NewsViewCell: UITableViewCell {
     
     func setup () {
         thumbImageView.layer.cornerRadius = 8
-        thumbImageView.layer.masksToBounds = true
+        
     }
     
-    var bookmarkButtonGotTapped : (() -> ()) = {}
-    
-    @IBAction func bookmarkButtonTapped(_ sender: Any) {
-       bookmarkButtonGotTapped()
+    @IBAction func bookmarkButtonGotTapped(_ sender: Any) {
+        delegate?.newsViewCellBookmarkButtonTapped(self)
+        print("tapped")
     }
+    
     
 }
