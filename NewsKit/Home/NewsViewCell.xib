@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="custom_news_cell" rowHeight="105" id="vUE-Pl-1Ag" customClass="NewsViewCell" customModule="NewsKit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="105"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vUE-Pl-1Ag" id="7lJ-Hk-1hS">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="105"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tzg-42-UEf">
+                        <rect key="frame" x="20" y="10" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="JTy-WH-7UA"/>
+                            <constraint firstAttribute="height" constant="80" id="mUY-1R-pWV"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdr-A9-YPP">
+                        <rect key="frame" x="110" y="38.333333333333336" width="33" height="18"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee6-kE-zvS">
+                        <rect key="frame" x="337" y="34.666666666666657" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="0fJ-VQ-PNw"/>
+                            <constraint firstAttribute="height" constant="36" id="W4Z-9v-56J"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="bookmark" catalog="system"/>
+                        <connections>
+                            <action selector="bookmarkButtonTapped:" destination="vUE-Pl-1Ag" eventType="touchUpInside" id="QVQ-ek-v1d"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7g-74-mQN">
+                        <rect key="frame" x="110" y="9.9999999999999982" width="207" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ee6-kE-zvS" firstAttribute="leading" secondItem="P7g-74-mQN" secondAttribute="trailing" constant="20" id="0Qy-mC-m9l"/>
+                    <constraint firstItem="P7g-74-mQN" firstAttribute="top" secondItem="Tzg-42-UEf" secondAttribute="top" id="1f4-m8-v2c"/>
+                    <constraint firstAttribute="bottom" secondItem="Tzg-42-UEf" secondAttribute="bottom" constant="10" id="Ot1-s0-Gm2"/>
+                    <constraint firstItem="Ee6-kE-zvS" firstAttribute="centerY" secondItem="7lJ-Hk-1hS" secondAttribute="centerY" id="bw4-Fo-grL"/>
+                    <constraint firstItem="Tzg-42-UEf" firstAttribute="leading" secondItem="7lJ-Hk-1hS" secondAttribute="leading" constant="20" id="cMH-mg-CP5"/>
+                    <constraint firstAttribute="trailing" secondItem="Ee6-kE-zvS" secondAttribute="trailing" constant="20" id="hMS-c3-ocz"/>
+                    <constraint firstItem="Sdr-A9-YPP" firstAttribute="leading" secondItem="P7g-74-mQN" secondAttribute="leading" id="ldC-DZ-4Fn"/>
+                    <constraint firstItem="Tzg-42-UEf" firstAttribute="top" secondItem="7lJ-Hk-1hS" secondAttribute="top" constant="10" id="sZQ-wL-Nrg"/>
+                    <constraint firstItem="P7g-74-mQN" firstAttribute="leading" secondItem="Tzg-42-UEf" secondAttribute="trailing" constant="10" id="vfK-4T-w6E"/>
+                    <constraint firstItem="Sdr-A9-YPP" firstAttribute="top" secondItem="P7g-74-mQN" secondAttribute="bottom" constant="8" id="wNi-Q7-a4k"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bookmarkButton" destination="Ee6-kE-zvS" id="bQi-Zy-Fci"/>
+                <outlet property="subtitleLabel" destination="Sdr-A9-YPP" id="Sma-gl-XrI"/>
+                <outlet property="thumbImageView" destination="Tzg-42-UEf" id="d01-Aj-1t0"/>
+                <outlet property="titileLabel" destination="P7g-74-mQN" id="k6W-T1-Wh3"/>
+            </connections>
+            <point key="canvasLocation" x="-283" y="62"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bookmark" catalog="system" width="110" height="128"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
